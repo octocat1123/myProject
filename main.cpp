@@ -37,6 +37,40 @@ public:
 EAccessViolation::EAccessViolation(void* badAddr){
 	m_badAddr = badAddr;
 }
+void EAccessViolation::Print(){
+	printf("Access violation read of address %p!", m_badAddr);
+}
+
+void EAccessViolation::Read(){
+}
+
+EZeroDivide::EZeroDivide(const double &divident){
+	m_divident = divident;
+}
+
+void EZeroDivide::Print(){
+	printf("There was a try to divide %lf by zero!", m_divident);
+}
+
+void EZeroDivide::Read(){
+}
+
+EOverflow::EOverflow(const int &operand1, const int &operand2){
+	m_operand1 = operand1;
+	m_operand2 = operand2;
+}
+
+void EOverflow::Print(){
+	printf("There was an overflow during some operation between %d and %d!", m_operand1, m_operand2);
+}
+
+void EOverflow::Read(){
+}
+
+void disposeError(EBaseError** e){
+	if (*e != NULL) delete *e;
+	*e = NULL;
+}
 
 int main(){
 	SetConsoleOutputCP(1251);
