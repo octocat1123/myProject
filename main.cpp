@@ -53,6 +53,7 @@ void EZeroDivide::Print(){
 }
 
 void EZeroDivide::Read(){
+	//can't read this box
 }
 
 EOverflow::EOverflow(const int &operand1, const int &operand2){
@@ -65,6 +66,7 @@ void EOverflow::Print(){
 }
 
 void EOverflow::Read(){
+	//can't read this box
 }
 
 void disposeError(EBaseError** e){
